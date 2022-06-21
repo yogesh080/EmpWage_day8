@@ -6,18 +6,27 @@
         {
             public void CheckEmp()
             {
-                int isPresent=1;
-                Random rand = new Random();
-                int Check = rand.Next(0,2);
+                int isFullTime = 1;
+                int EmployeeWagePerHour = 20;
+                int EmpDailyHour;
 
-                if (Check == isPresent)
+                Random rand = new Random();
+                int Check = rand.Next(2);
+
+                if (Check == isFullTime)
                 {
                     Console.WriteLine("Employee is Present");
+                    EmpDailyHour = 8;
+
                 }
                 else
                 {
                     Console.WriteLine("Absent");
+                    EmpDailyHour = 0;
                 }
+
+                int DailyWage = EmployeeWagePerHour * EmpDailyHour;
+                Console.WriteLine("Per day wage of employee if Present is: " + DailyWage);
 
             }
         }
