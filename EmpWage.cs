@@ -2,40 +2,45 @@
 {
     internal partial class Program
     {
+
         public class EmpWage
         {
+            /// <summary>
+            /// This program is used to check whether employee is present or absent
+            /// </summary>
             public void CheckEmp()
             {
-                int PartTime = 1;
-                int isFullTime = 2;
-                int EmployeeWagePerHour = 20;
-                int EmpDailyHour;
 
-                Random rand = new Random();
-                int Check = rand.Next(3);
+                const int EmployeeFullTime = 1;
+                const int EmployeePartTime = 2;
 
-                if (Check == isFullTime)
+                int EmpWagePerHour = 20;
+                int EmpDailyWork;
+                Random r = new Random();
+
+                int check = r.Next(3);
+
+                switch (check)
                 {
-                    Console.WriteLine("Employee is Present");
-                    EmpDailyHour = 8;
-
-                }
-                else if(Check == PartTime)
-                {
-                    Console.WriteLine("Employee is Part Time");
-                    EmpDailyHour=4;
-
-                }
-                else
-                {
-                    Console.WriteLine("Absent");
-                    EmpDailyHour = 0;
+                    case EmployeeFullTime:
+                        Console.WriteLine("Employee is Present");
+                        EmpDailyWork = 8;
+                        break;
+                    case EmployeePartTime:
+                        Console.WriteLine("Employee is Part time");
+                        EmpDailyWork = 4;
+                        break;
+                    default:
+                        Console.WriteLine("Employee is Absent");
+                        EmpDailyWork = 0;
+                        break;
                 }
 
-                int DailyWage = EmployeeWagePerHour * EmpDailyHour;
-                Console.WriteLine("Per day wage of employee if Present is: " + DailyWage);
 
+                int DailyWage = EmpWagePerHour * EmpDailyWork;
+                Console.WriteLine("Employee daily wage is: " + DailyWage);
             }
+
         }
     }
 }
