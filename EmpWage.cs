@@ -6,17 +6,24 @@
         {
             public void CheckEmp()
             {
-                int isFullTime = 1;
+                int PartTime = 1;
+                int isFullTime = 2;
                 int EmployeeWagePerHour = 20;
                 int EmpDailyHour;
 
                 Random rand = new Random();
-                int Check = rand.Next(2);
+                int Check = rand.Next(3);
 
                 if (Check == isFullTime)
                 {
                     Console.WriteLine("Employee is Present");
                     EmpDailyHour = 8;
+
+                }
+                else if(Check == PartTime)
+                {
+                    Console.WriteLine("Employee is Part Time");
+                    EmpDailyHour=4;
 
                 }
                 else
